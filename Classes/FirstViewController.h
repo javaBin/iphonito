@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface FirstViewController : UIViewController {
+@interface FirstViewController : UITableViewController {
 
+	NSArray* sessions;
 }
+
+@property (nonatomic, retain) NSArray *sessions;
 
 @end

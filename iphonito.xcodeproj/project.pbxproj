@@ -13,6 +13,7 @@
 		1352FB5B115EB47400EB2C1A /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB53115EB47400EB2C1A /* SBJsonBase.m */; };
 		1352FB5C115EB47400EB2C1A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB55115EB47400EB2C1A /* SBJsonParser.m */; };
 		1352FB5D115EB47400EB2C1A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB57115EB47400EB2C1A /* SBJsonWriter.m */; };
+		13C394E2115EC43700871DB9 /* JavaZoneRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C394E1115EC43700871DB9 /* JavaZoneRepository.m */; };
 		1D3623260D0F684500981E51 /* iphonitoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iphonitoAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -37,6 +38,8 @@
 		1352FB55115EB47400EB2C1A /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		1352FB56115EB47400EB2C1A /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		1352FB57115EB47400EB2C1A /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		13C394E0115EC43600871DB9 /* JavaZoneRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JavaZoneRepository.h; sourceTree = "<group>"; };
+		13C394E1115EC43700871DB9 /* JavaZoneRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JavaZoneRepository.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* iphonitoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphonitoAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* iphonitoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iphonitoAppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +77,8 @@
 				28216C960DB411BC00E5133A /* FirstViewController.m */,
 				1D3623240D0F684500981E51 /* iphonitoAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iphonitoAppDelegate.m */,
+				13C394E0115EC43600871DB9 /* JavaZoneRepository.h */,
+				13C394E1115EC43700871DB9 /* JavaZoneRepository.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				1352FB5B115EB47400EB2C1A /* SBJsonBase.m in Sources */,
 				1352FB5C115EB47400EB2C1A /* SBJsonParser.m in Sources */,
 				1352FB5D115EB47400EB2C1A /* SBJsonWriter.m in Sources */,
+				13C394E2115EC43700871DB9 /* JavaZoneRepository.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +251,7 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADDITIONAL_SDKS = "~/Library/SDKs/httpriot-0.6.8/$(PLATFORM_NAME)$(IPHONEOS_DEPLOYMENT_TARGET).sdk";
+				ADDITIONAL_SDKS = "";
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
@@ -259,7 +265,7 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ADDITIONAL_SDKS = "~/Library/SDKs/httpriot-0.6.8/$(PLATFORM_NAME)$(IPHONEOS_DEPLOYMENT_TARGET).sdk";
+				ADDITIONAL_SDKS = "";
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
