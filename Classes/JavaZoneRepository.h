@@ -16,6 +16,7 @@
 - (NSDictionary *) loadTracks;
 - (NSArray *) loadSessions;
 - (NSArray *) loadSpeakers;
+- (NSArray *) loadTweets;
 
 - (id) objectWithUrl:(NSURL *)url;
 - (id) stringWithUrl:(NSURL *)url;

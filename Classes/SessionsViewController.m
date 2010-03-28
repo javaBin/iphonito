@@ -6,10 +6,10 @@
 //  Copyright Go Mobile 2010. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "SessionsViewController.h"
 #import "JavaZoneRepository.h"
 
-@implementation FirstViewController
+@implementation SessionsViewController
 @synthesize sessions;
 
 

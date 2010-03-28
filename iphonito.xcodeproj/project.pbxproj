@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1316104B115ED6960051F1AE /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1316104A115ED6960051F1AE /* TwitterViewController.m */; };
 		1352FB58115EB47400EB2C1A /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB4D115EB47400EB2C1A /* NSObject+SBJSON.m */; };
 		1352FB59115EB47400EB2C1A /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB4F115EB47400EB2C1A /* NSString+SBJSON.m */; };
 		1352FB5A115EB47400EB2C1A /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB51115EB47400EB2C1A /* SBJSON.m */; };
@@ -18,13 +19,14 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		28216C970DB411BC00E5133A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* FirstViewController.m */; };
-		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
+		28216C970DB411BC00E5133A /* SessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28216C960DB411BC00E5133A /* SessionsViewController.m */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13161049115ED6960051F1AE /* TwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterViewController.h; sourceTree = "<group>"; };
+		1316104A115ED6960051F1AE /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		1352FB4B115EB47400EB2C1A /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		1352FB4C115EB47400EB2C1A /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		1352FB4D115EB47400EB2C1A /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -45,9 +47,8 @@
 		1D3623250D0F684500981E51 /* iphonitoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iphonitoAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* iphonito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iphonito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		28216C950DB411BC00E5133A /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		28216C960DB411BC00E5133A /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		282CCBFD0DB6C98000C4EA27 /* SecondView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondView.xib; sourceTree = "<group>"; };
+		28216C950DB411BC00E5133A /* SessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsViewController.h; sourceTree = "<group>"; };
+		28216C960DB411BC00E5133A /* SessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsViewController.m; sourceTree = "<group>"; };
 		288765070DF74369002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28A0AB4B0D9B1048005BE974 /* iphonito_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphonito_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -73,12 +74,14 @@
 			isa = PBXGroup;
 			children = (
 				1352FB4A115EB47400EB2C1A /* JSON */,
-				28216C950DB411BC00E5133A /* FirstViewController.h */,
-				28216C960DB411BC00E5133A /* FirstViewController.m */,
+				28216C950DB411BC00E5133A /* SessionsViewController.h */,
+				28216C960DB411BC00E5133A /* SessionsViewController.m */,
 				1D3623240D0F684500981E51 /* iphonitoAppDelegate.h */,
 				1D3623250D0F684500981E51 /* iphonitoAppDelegate.m */,
 				13C394E0115EC43600871DB9 /* JavaZoneRepository.h */,
 				13C394E1115EC43700871DB9 /* JavaZoneRepository.m */,
+				13161049115ED6960051F1AE /* TwitterViewController.h */,
+				1316104A115ED6960051F1AE /* TwitterViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -135,7 +138,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* iphonito-Info.plist */,
 			);
@@ -195,7 +197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
-				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +209,7 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* iphonitoAppDelegate.m in Sources */,
-				28216C970DB411BC00E5133A /* FirstViewController.m in Sources */,
+				28216C970DB411BC00E5133A /* SessionsViewController.m in Sources */,
 				1352FB58115EB47400EB2C1A /* NSObject+SBJSON.m in Sources */,
 				1352FB59115EB47400EB2C1A /* NSString+SBJSON.m in Sources */,
 				1352FB5A115EB47400EB2C1A /* SBJSON.m in Sources */,
@@ -216,6 +217,7 @@
 				1352FB5C115EB47400EB2C1A /* SBJsonParser.m in Sources */,
 				1352FB5D115EB47400EB2C1A /* SBJsonWriter.m in Sources */,
 				13C394E2115EC43700871DB9 /* JavaZoneRepository.m in Sources */,
+				1316104B115ED6960051F1AE /* TwitterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

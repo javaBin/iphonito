@@ -66,5 +66,11 @@
 	return feed;
 }
 
-
+- (NSArray *) loadTweets 
+{
+	id response = [self objectWithUrl:[NSURL URLWithString:@"http://search.twitter.com/search.json?&ors=%23jz10+%23javazone+%40javazone&lang=all"]];
+	NSDictionary *feed = (NSDictionary *)response;
+	return (NSArray *) [feed objectForKey:@"results"];
+	
+}
 @end
