@@ -11,7 +11,7 @@
 #import "Talk.h"
 
 @implementation SessionsViewController
-@synthesize sessions, sectionsArray, collation;
+@synthesize sessions, sectionsArray, collation, filteredSessions, savedSearchTerm, searchWasActive, tableData;
 
 
 - (void)viewDidLoad {
@@ -20,13 +20,40 @@
 	JavaZoneRepository *repo = [[JavaZoneRepository alloc] init];
 	self.title = @"Sessions";
 
-	self.sessions = [repo loadSessions];
-	[self configureSessions];
+	self.tableData = [repo loadSessions];
+    self.sessions = self.tableData;
+	
+	// create a filtered list that will contain products for the search results table.
+	self.filteredSessions = [NSMutableArray arrayWithCapacity:[self.sessions count]];
+	
+	// restore search settings if they were saved in didReceiveMemoryWarning.
+    if (self.savedSearchTerm)
+	{
+        [self.searchDisplayController setActive:self.searchWasActive];
+        [self.searchDisplayController.searchBar setText:savedSearchTerm];        
+        self.savedSearchTerm = nil;
+	
+    }
+	[self.tableView reloadData];
+	self.tableView.scrollEnabled = YES;
 	
 }
 
+- (void)setTableData:(NSArray *)newDataArray {
+	if (newDataArray != tableData) {
+		[tableData release];
+		tableData = [newDataArray retain];
+	}
+	if (tableData == nil) {
+		self.sectionsArray = nil;
+	}
+	else {
+		[self configureSessions];
+	}
+}
+
 - (void) configureSessions {
-	// Get the current collation and keep a reference to it.
+	
 	self.collation = [UILocalizedIndexedCollation currentCollation];
 	
 	NSInteger index, sectionTitlesCount = [[collation sectionTitles] count];
@@ -40,28 +67,17 @@
 		[array release];
 	}
 	
-	// Segregate the time zones into the appropriate arrays.
-	for (Talk *talk in sessions) {
+	for (Talk *talk in tableData) {
 		
-		// Ask the collation which section number the time zone belongs in, based on its locale name.
 		NSInteger sectionNumber = [collation sectionForObject:talk collationStringSelector:@selector(title)];
-		
-		// Get the array for the section.
 		NSMutableArray *sectionForTalk = [newSectionsArray objectAtIndex:sectionNumber];
-		
-		//  Add the time zone to the section.
 		[sectionForTalk addObject:talk];
 	}
 	
-	// Now that all the data's in place, each section array needs to be sorted.
 	for (index = 0; index < sectionTitlesCount; index++) {
 		
 		NSMutableArray *talkArrayForSection = [newSectionsArray objectAtIndex:index];
-		
-		// If the table view or its contents were editable, you would make a mutable copy here.
 		NSArray *sortedTalkArrayForSection = [collation sortedArrayFromArray:talkArrayForSection collationStringSelector:@selector(title)];
-		
-		// Replace the existing array with the sorted array.
 		[newSectionsArray replaceObjectAtIndex:index withObject:sortedTalkArrayForSection];
 	}
 	
@@ -76,17 +92,13 @@
 #pragma mark Table view data source and delegate methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	// The number of sections is the same as the number of titles in the collation.
     return [[collation sectionTitles] count];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
-	// The number of time zones in the section is the count of the array associated with the section in the sections array.
-	NSArray *talksInSection = [sectionsArray objectAtIndex:section];
-	
-    return [talksInSection count];
+    return [[sectionsArray objectAtIndex:section] count];
 }
 
 
@@ -120,12 +132,21 @@
 
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return [collation sectionIndexTitles];
+    NSMutableArray *titles = [[collation sectionIndexTitles] mutableCopy];
+	[titles insertObject:@"{search}" atIndex:0];
+	return titles;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
-    return [collation sectionForSectionIndexTitleAtIndex:index];
+	if (index == 0) {
+		// search item
+		[tableView scrollRectToVisible:[[tableView tableHeaderView] bounds] animated:NO];
+		return -1;
+	}	
+	
+	
+	return [collation sectionForSectionIndexTitleAtIndex:index];
 }
 
 
@@ -133,6 +154,37 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+#pragma mark -
+#pragma mark Content Filtering
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+	/*
+	 Update the filtered array based on the search text and scope.
+	 */
+	
+}
+
+
+#pragma mark -
+#pragma mark UISearchDisplayController Delegate Methods
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    
+	 [self.filteredSessions removeAllObjects]; // First clear the filtered array.
+	 
+	 for (Talk *talk in sessions)
+	 {
+		 NSComparisonResult result = [talk.title compare:searchString options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchString length])];
+		 if (result == NSOrderedSame)
+		 {
+			 [self.filteredSessions addObject:talk];
+		 }
+	 }
+    self.tableData = filteredSessions;
+	return YES;
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -149,11 +201,18 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    // save the state of the search UI so that it can be restored if the view is re-created
+    self.searchWasActive = [self.searchDisplayController isActive];
+    self.savedSearchTerm = [self.searchDisplayController.searchBar text];
 }
 
+- (void)viewDidUnload
+{
+	self.filteredSessions = nil;
+}
 
 - (void)dealloc {
 	[sessions release];
