@@ -11,9 +11,15 @@
 
 @interface SessionsViewController : UITableViewController {
 
-	NSArray* sessions;
+	NSMutableArray* sessions;
+	NSMutableArray *sectionsArray;
+	UILocalizedIndexedCollation *collation;
 }
 
+- (void) configureSessions;
+
+@property (nonatomic, retain) NSMutableArray *sectionsArray;
+@property (nonatomic, retain) UILocalizedIndexedCollation *collation;
 @property (nonatomic, retain) NSArray *sessions;
 
 @end

@@ -14,6 +14,7 @@
 		1352FB5B115EB47400EB2C1A /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB53115EB47400EB2C1A /* SBJsonBase.m */; };
 		1352FB5C115EB47400EB2C1A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB55115EB47400EB2C1A /* SBJsonParser.m */; };
 		1352FB5D115EB47400EB2C1A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1352FB57115EB47400EB2C1A /* SBJsonWriter.m */; };
+		1380DFAC115FE98500F1F6FE /* Talk.m in Sources */ = {isa = PBXBuildFile; fileRef = 1380DFAB115FE98500F1F6FE /* Talk.m */; };
 		13C394E2115EC43700871DB9 /* JavaZoneRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 13C394E1115EC43700871DB9 /* JavaZoneRepository.m */; };
 		1D3623260D0F684500981E51 /* iphonitoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iphonitoAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -40,6 +41,8 @@
 		1352FB55115EB47400EB2C1A /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		1352FB56115EB47400EB2C1A /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		1352FB57115EB47400EB2C1A /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		1380DFAA115FE98500F1F6FE /* Talk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Talk.h; sourceTree = "<group>"; };
+		1380DFAB115FE98500F1F6FE /* Talk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Talk.m; sourceTree = "<group>"; };
 		13C394E0115EC43600871DB9 /* JavaZoneRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JavaZoneRepository.h; sourceTree = "<group>"; };
 		13C394E1115EC43700871DB9 /* JavaZoneRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JavaZoneRepository.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,6 +85,8 @@
 				13C394E1115EC43700871DB9 /* JavaZoneRepository.m */,
 				13161049115ED6960051F1AE /* TwitterViewController.h */,
 				1316104A115ED6960051F1AE /* TwitterViewController.m */,
+				1380DFAA115FE98500F1F6FE /* Talk.h */,
+				1380DFAB115FE98500F1F6FE /* Talk.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				1352FB5D115EB47400EB2C1A /* SBJsonWriter.m in Sources */,
 				13C394E2115EC43700871DB9 /* JavaZoneRepository.m in Sources */,
 				1316104B115ED6960051F1AE /* TwitterViewController.m in Sources */,
+				1380DFAC115FE98500F1F6FE /* Talk.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

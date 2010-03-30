@@ -7,7 +7,7 @@
 //
 
 #import "JavaZoneRepository.h"
-
+#import "Talk.h"
 
 @implementation JavaZoneRepository
 
@@ -47,7 +47,12 @@
 	id response = [self objectWithUrl:[NSURL URLWithString:@"http://javazone.no/incogito09/rest/events/JavaZone%202009/sessions"]];
 	
 	NSDictionary *feed = (NSDictionary *)response;
-	return (NSArray *) [feed objectForKey:@"sessions"];
+	NSArray *sessions = (NSArray *) [feed objectForKey:@"sessions"];
+	NSMutableArray *newSessionArray = [[NSMutableArray alloc] initWithCapacity:[sessions count]];
+	for (NSDictionary *dict in sessions) {
+		[newSessionArray addObject: [Talk talkFromDictionary: dict]];
+	}
+	return newSessionArray;
 }
 
 - (NSArray *) loadSpeakers
